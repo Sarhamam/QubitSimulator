@@ -1,0 +1,48 @@
+{
+  "benchmark": "geodesic_vs_euclidean",
+  "phase_sensitivity": {
+    "phases_deg": [
+      0.0,
+      45.0,
+      90.0,
+      180.0,
+      270.0
+    ],
+    "d_euclidean": [
+      0.0,
+      0.7653668647301795,
+      1.414213562373095,
+      2.0,
+      1.4142135623730951
+    ],
+    "d_fubini_study": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "d_bures": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "correlation_test": {
+    "n_pairs": 100,
+    "correlations": {
+      "euclidean": 0.29031038263252057,
+      "fubini_study": 0.9834341824155535,
+      "bures": 0.9896374643505608,
+      "trace": 0.9999999999999999
+    }
+  },
+  "conclusion": {
+    "euclidean_fails_phase": true,
+    "geodesic_distances_meaningful": true,
+    "best_metric": "fubini_study or bures"
+  },
+  "statement": "Geodesic distances (Fubini-Study, Bures) correctly capture quantum state similarity, while Euclidean distance fails due to global phase invariance."
+}

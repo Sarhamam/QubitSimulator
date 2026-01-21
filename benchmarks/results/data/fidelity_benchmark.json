@@ -1,0 +1,34 @@
+{
+  "Bell (2q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0000001343588565
+  },
+  "GHZ (3q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0000001343588565
+  },
+  "GHZ (4q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0000001343588565
+  },
+  "GHZ (5q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0000001343588565
+  },
+  "QFT (3q)": {
+    "fidelity_vs_qiskit": 1.0000000000000004,
+    "fidelity_vs_cirq": 1.0000001343588565
+  },
+  "QFT (4q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0
+  },
+  "Clifford (3q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0
+  },
+  "Clifford (4q)": {
+    "fidelity_vs_qiskit": 1.0,
+    "fidelity_vs_cirq": 1.0000001343588565
+  }
+}

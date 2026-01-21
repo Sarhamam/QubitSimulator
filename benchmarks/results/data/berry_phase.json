@@ -1,0 +1,51 @@
+{
+  "benchmark": "berry_phase",
+  "test_cases": [
+    {
+      "name": "Equator",
+      "description": "Great circle at \u03b8 = \u03c0/2",
+      "solid_angle": 6.283185307179586,
+      "expected_gamma": 3.141592653589793,
+      "computed_gamma": 3.1415926535897927,
+      "error": 4.440892098500626e-16
+    },
+    {
+      "name": "Polar cap (\u03b8=\u03c0/4)",
+      "description": "Cap from pole to \u03b8 = \u03c0/4",
+      "solid_angle": 1.84030236902122,
+      "expected_gamma": 0.92015118451061,
+      "computed_gamma": 0.9201511845106054,
+      "error": 4.551914400963142e-15
+    },
+    {
+      "name": "Polar cap (\u03b8=\u03c0/3)",
+      "description": "Cap from pole to \u03b8 = \u03c0/3",
+      "solid_angle": 3.1415926535897922,
+      "expected_gamma": 1.5707963267948961,
+      "computed_gamma": 1.5707963267948963,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "name": "Small loop (\u03b8=\u03c0/2)",
+      "description": "Small circle at equator",
+      "solid_angle": 0.031415926535897934,
+      "expected_gamma": 0.015707963267948967,
+      "computed_gamma": 0.01568792359618436,
+      "error": 2.003967176460869e-05
+    },
+    {
+      "name": "Figure-8",
+      "description": "Self-crossing loop (\u03a9 = 0)",
+      "solid_angle": 0,
+      "expected_gamma": 0,
+      "computed_gamma": 0.0,
+      "error": 0.0
+    }
+  ],
+  "analysis": {
+    "max_error": 2.003967176460869e-05,
+    "mean_error": 4.007934353965348e-06,
+    "all_passed": true
+  },
+  "statement": "Berry phase computation matches analytic results to high precision, validating QGT implementation."
+}

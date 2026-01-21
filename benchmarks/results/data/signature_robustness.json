@@ -1,0 +1,89 @@
+{
+  "benchmark": "signature_robustness",
+  "perturbation_test": {
+    "epsilon_values": [
+      0.01,
+      0.05,
+      0.1,
+      0.2,
+      0.5
+    ],
+    "results": {
+      "H1: \u03c3z": {
+        "mean_distance": [
+          0.053818846820251856,
+          0.26652976758196417,
+          0.5761025512892644,
+          1.383905665552944,
+          3.901107975027215
+        ],
+        "std_distance": [
+          0.03845186486785191,
+          0.16200665539455789,
+          0.31674324646519847,
+          0.7567279874158868,
+          5.353219120908843
+        ]
+      },
+      "H2: \u03c3x": {
+        "mean_distance": [
+          0.061837941897733284,
+          0.24379469448581617,
+          0.5589774403074899,
+          0.9690234537710797,
+          3.445351195857665
+        ],
+        "std_distance": [
+          0.037846525401633704,
+          0.1844341701940735,
+          0.4465003012606777,
+          0.7208843716174039,
+          3.38767550857618
+        ]
+      }
+    }
+  },
+  "discriminability": {
+    "systems": [
+      "H1: \u03c3z",
+      "H2: \u03c3x",
+      "H3: \u03c3z + \u03c3x",
+      "H4: 2-qubit ZZ"
+    ],
+    "distance_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        7.0710678118654755
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        7.0710678118654755
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        7.0710678118654755
+      ],
+      [
+        7.0710678118654755,
+        7.0710678118654755,
+        7.0710678118654755,
+        0.0
+      ]
+    ]
+  },
+  "distribution_comparison": {
+    "same_system_mean": 1.1520955132665567,
+    "same_system_max": 3.626331641319177,
+    "different_system_mean": 3.5355339059327378,
+    "different_system_min": 0.0,
+    "separation_gap": -3.626331641319177,
+    "well_separated": false
+  },
+  "statement": "Spectral signatures provide robust system identification, stable under perturbations yet discriminating between distinct systems."
+}

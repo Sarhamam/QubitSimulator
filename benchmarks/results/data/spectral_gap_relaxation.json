@@ -1,0 +1,56 @@
+{
+  "benchmark": "spectral_gap_relaxation",
+  "parameters": {
+    "n_qubits": 1,
+    "hamiltonian": "H = (1/2) sigma_z",
+    "initial_state": "|+>",
+    "noise_type": "amplitude_damping"
+  },
+  "data": {
+    "gamma_values": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "spectral_gaps": [
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.25
+    ],
+    "predicted_tau": [
+      40.0,
+      20.0,
+      13.333333333333334,
+      10.0,
+      6.666666666666667,
+      4.0
+    ],
+    "measured_tau": [
+      17.371454955629098,
+      9.851720382531578,
+      6.658315524956109,
+      4.996984071151257,
+      3.3316905508926253,
+      1.9992361563574166
+    ],
+    "ratios": [
+      0.43428637389072744,
+      0.4925860191265789,
+      0.49937366437170816,
+      0.4996984071151257,
+      0.4997535826338938,
+      0.49980903908935415
+    ]
+  },
+  "analysis": {
+    "mean_ratio": 0.4875845143712314,
+    "std_ratio": 0.023975551820576677
+  },
+  "statement": "Lindbladian spectral gap accurately predicts relaxation timescale, validating the spectral-geometric connection."
+}

@@ -538,6 +538,67 @@ quantum_simulator/
 | Shor's Factoring | O(exp(n)) | O(n³) | Exponential |
 | QFT | O(n·2^n) | O(n²) | Exponential |
 
+## Benchmarks: What Makes This Different
+
+This simulator provides **geometric insight** into quantum dynamics that standard simulators cannot offer. It's not about being faster — it's about seeing more.
+
+### Capability Comparison
+
+| Capability | Qiskit/Cirq | This Simulator |
+|------------|-------------|----------------|
+| State vector simulation | ✓ | ✓ |
+| Density matrix evolution | ✓ | ✓ |
+| Bures/Fubini-Study distances | ✗ | ✓ |
+| Quantum Fisher Information | Limited | Full QGT |
+| Spectral zeta functions | ✗ | ✓ |
+| Berry phase computation | ✗ | ✓ |
+| Natural gradient optimization | ✗ | ✓ |
+| Entanglement tracking (concurrence) | Limited | ✓ |
+| Chaos detection (spectral form factor) | ✗ | ✓ |
+| Lindbladian spectral analysis | ✗ | ✓ |
+
+### Benchmark Highlights
+
+**Natural Gradient VQE** — Geometry-aware optimization converges 3-4× faster:
+
+| Optimizer | Final Energy | Iterations to ε=0.01 |
+|-----------|--------------|----------------------|
+| Vanilla GD | 0.372 | >150 (not converged) |
+| Natural GD | -1.000 | 41 |
+| Natural CG | -1.000 | 38 |
+
+**Berry Phase** — Validates QGT implementation against analytic results:
+
+| Loop | Expected γ | Computed γ | Error |
+|------|------------|------------|-------|
+| Equator | π | 3.142 | 0.000 |
+| Polar cap | 0.920 | 0.920 | 0.000 |
+| Figure-8 | 0 | 0.000 | 0.000 |
+
+**Chaos Detection** — Level spacing ratio ⟨r⟩ distinguishes integrable from chaotic:
+
+| System | ⟨r⟩ | Classification |
+|--------|-----|----------------|
+| Integrable | 0.36 | ✗ Integrable |
+| GOE (chaotic) | 0.57 | ✓ Chaotic |
+| GUE (chaotic) | 0.59 | ✓ Chaotic |
+
+**Entanglement Sudden Death** — Tracks purely quantum phenomenon:
+- Concurrence drops to zero at finite time while purity remains high (0.83)
+- This has no classical analog and requires full density matrix evolution
+
+### Running Benchmarks
+
+```bash
+# Run all benchmarks (skip fidelity if qiskit/cirq not installed)
+python benchmarks/run_benchmarks.py --all --skip-fidelity
+
+# Run specific benchmark
+python benchmarks/run_benchmarks.py --benchmark chaos
+```
+
+Full benchmark documentation: [`benchmarks/BENCHMARKS.md`](benchmarks/BENCHMARKS.md)
+
 ## License
 
 Part of the NoeticEidos research framework.

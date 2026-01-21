@@ -1,0 +1,7 @@
+# Benchmark dependencies
+numpy>=1.20
+scipy>=1.7
+matplotlib>=3.5
+qiskit>=1.0
+qiskit-aer>=0.13
+cirq>=1.0
